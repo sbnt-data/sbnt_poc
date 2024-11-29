@@ -1,0 +1,66 @@
+﻿@page "/poc"
+
+<PageTitle>POC Page</PageTitle>
+
+<TelerikButton OnClick="@AddMoreTabs">Add More repeated tabs</TelerikButton>
+<br />
+<br />
+
+<TelerikTabStrip @bind-ActiveTabIndex="@ActiveTabIndex" PersistTabContent="true">
+    @{
+        // we will render only the visible tabs (but include disabled tabs), and order them by their ID
+        // you can alter this logic as needed to show and reorder tabs as required
+        foreach (TabDescriptor item in tabs.Where(t => t.Visible == true).OrderBy(f => f.Id))
+        {
+            <TabStripTab Title="@item.Title" Disabled="@item.Disabled" @key="@item.Id">
+                @*
+        If you have child components you should also consider adding a key to them
+        (applies to the repeated component above too) to ensure they re-render and update properly
+        when the new tab content gets rendered - by default Blazor will try to NOT re-render them.
+        This applies not only to Telerik components, but to any components too. The more complex,
+        the more likely you are to see an old render. For example, the textbox is likely to "work"
+        without the key too, but complex things like the HTML editor probably will not.
+        *@
+                <CounterComponent @key="@item.Id" />
+            </TabStripTab>
+        }
+    }
+</TelerikTabStrip>
+
+
+@code {
+    int ActiveTabIndex { get; set; }
+    TabDescriptor SelectedTab => tabs[ActiveTabIndex];
+
+    // a sample of adding more tabs that can render when you need
+
+    async Task AddMoreTabs()
+    {
+        // you can even fetch data from a remote service here
+        // for brevity, we will just add another instance
+        TabDescriptor tabToAdd = new TabDescriptor
+            {
+                Id = tabs.Count + 1,
+                Title = $"Tab {tabs.Count + 1}"
+            };
+
+        tabs.Add(tabToAdd);
+        // you can also choose to insert it at a given index
+    }
+
+    List<TabDescriptor> tabs = new List<TabDescriptor>()
+{
+        new TabDescriptor { Id = 0, Title = "Tab 1" },
+        new TabDescriptor { Id = 1, Title = "Tab 2" },
+    };
+
+    public class TabDescriptor
+    {
+        // you can add more fields to describe the tabs and their content as needed
+        // in this sample, we use the Title for brevity and simplicity
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public bool Disabled { get; set; }
+        public bool Visible { get; set; } = true;
+    }
+}

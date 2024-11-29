@@ -1,0 +1,25 @@
+﻿<h3>Simple Counter</h3>
+
+<p>Current Count: @count</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Increment</button>
+
+@code {
+    private int count;
+
+    protected override void OnInitialized()
+    {
+        // Initialize the counter value
+        Initialize();
+    }
+
+    private void Initialize()
+    {
+        count = 0; // Set initial value for the counter
+    }
+
+    private void IncrementCount()
+    {
+        count++;
+    }
+}
