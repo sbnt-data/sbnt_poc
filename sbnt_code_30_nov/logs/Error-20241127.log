@@ -1,0 +1,1223 @@
+2024-11-27 12:06:04.982 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 12:11:08.892 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 12:16:03.450 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 13:58:38.131 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 13:59:06.731 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PMS.Persistence.Repositories.JobClassRepository.GetJobClassByClientIdAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobClassRepository.cs:line 111
+   at PMS.Persistence.Repositories.JobClassRepository.GetJobClassByClientIdAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobClassRepository.cs:line 115
+   at PMS.Application.Features.JobClass.Queries.GetJobClassListByClientIdQuery.GetJobClassListByClientIdQueryHandler.Handle(GetJobClassListByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\JobClass\Queries\GetJobClassListByClientId\GetJobClassListByClientIdQueryHandler.cs:line 77
+   at PMS.Api.Controllers.JobClassController.Get() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\JobClassController.cs:line 50
+   at lambda_method812(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-27 13:59:06.732 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method836(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-27 14:06:02.107 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 14:11:40.205 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 14:15:31.353 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PMS.Persistence.Repositories.JobClassRepository.GetJobClassByClientIdAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobClassRepository.cs:line 111
+   at PMS.Persistence.Repositories.JobClassRepository.GetJobClassByClientIdAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobClassRepository.cs:line 115
+   at PMS.Application.Features.JobClass.Queries.GetJobClassListByClientIdQuery.GetJobClassListByClientIdQueryHandler.Handle(GetJobClassListByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\JobClass\Queries\GetJobClassListByClientId\GetJobClassListByClientIdQueryHandler.cs:line 77
+   at PMS.Api.Controllers.JobClassController.Get() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\JobClassController.cs:line 50
+   at lambda_method955(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-27 14:35:12.131 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 14:35:28.849 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.InvalidOperationException: Invalid attempt to call NextResult when reader is closed.
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResult()
+   at Dapper.SqlMapper.GridReader.OnAfterGrid(Int32 index) in /_/Dapper/SqlMapper.GridReader.cs:line 450
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+<>m__Finally1() in /_/Dapper/SqlMapper.GridReader.cs:line 404
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.GridReader.cs:line 401
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 205
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 96
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method821(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-27 14:52:42.818 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 15:50:10.634 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:96c343c8-1d8f-408a-b850-c54682ae0bc2
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:96c343c8-1d8f-408a-b850-c54682ae0bc2
+Error Number:-2,State:0,Class:11
+2024-11-27 15:50:10.853 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method16(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:96c343c8-1d8f-408a-b850-c54682ae0bc2
+Error Number:-2,State:0,Class:11
+2024-11-27 15:50:41.005 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:96c343c8-1d8f-408a-b850-c54682ae0bc2
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:96c343c8-1d8f-408a-b850-c54682ae0bc2
+Error Number:-2,State:0,Class:11
+2024-11-27 15:50:41.127 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method16(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:96c343c8-1d8f-408a-b850-c54682ae0bc2
+Error Number:-2,State:0,Class:11
+2024-11-27 15:54:45.445 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 15:55:23.255 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 15:55:23.384 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method10(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 15:55:53.532 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 15:55:53.678 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method10(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 15:57:07.900 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 15:57:08.038 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method10(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 15:57:38.140 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 15:57:38.254 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method10(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:fca83ce5-6e6f-4858-9c58-4c519c0db77b
+Error Number:-2,State:0,Class:11
+2024-11-27 16:21:03.179 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d21b1317-3ebf-480f-a2e3-00bf5aa3553f
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d21b1317-3ebf-480f-a2e3-00bf5aa3553f
+Error Number:-2,State:0,Class:11
+2024-11-27 16:21:03.392 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method12(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:d21b1317-3ebf-480f-a2e3-00bf5aa3553f
+Error Number:-2,State:0,Class:11
+2024-11-27 16:21:33.556 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d21b1317-3ebf-480f-a2e3-00bf5aa3553f
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d21b1317-3ebf-480f-a2e3-00bf5aa3553f
+Error Number:-2,State:0,Class:11
+2024-11-27 16:21:33.689 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method12(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:d21b1317-3ebf-480f-a2e3-00bf5aa3553f
+Error Number:-2,State:0,Class:11
+2024-11-27 16:21:50.827 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:28d6de91-5011-482c-943f-b4e82fead44b
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:28d6de91-5011-482c-943f-b4e82fead44b
+Error Number:-2,State:0,Class:11
+2024-11-27 16:21:50.974 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method12(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:28d6de91-5011-482c-943f-b4e82fead44b
+Error Number:-2,State:0,Class:11
+2024-11-27 16:22:21.069 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:28d6de91-5011-482c-943f-b4e82fead44b
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:28d6de91-5011-482c-943f-b4e82fead44b
+Error Number:-2,State:0,Class:11
+2024-11-27 16:22:21.204 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.ContinueAsyncCall[T](Task task, SqlDataReaderBaseAsyncCallContext`1 context)
+   at Microsoft.Data.SqlClient.SqlDataReader.SqlDataReaderBaseAsyncCallContext`1.ExecuteAsyncCallCallback(Task task, Object state)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.MenulistRepository.GetMenulist(Decimal clientid, Decimal userId, Decimal locationId, String applicationkey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\MenulistRepository.cs:line 30
+   at PMS.Application.Features.CommonRegisters.Queries.Menulist.GetMenulistByUserQueryHandler.Handle(GetMenulistByUserQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\Menulist\GetMenulistByUserQueryHandler.cs:line 33
+   at PMS.Api.Controllers.CommonRegistersController.GetMenuListByUser(String ApplicationKey) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 65
+   at lambda_method12(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:28d6de91-5011-482c-943f-b4e82fead44b
+Error Number:-2,State:0,Class:11
+2024-11-27 16:24:54.812 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 16:36:23.927 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 16:45:00.765 +05:30 [ERR] The connection was not closed. The connection's current state is connecting.
+System.Exception: The connection was not closed. The connection's current state is connecting.
+ ---> System.Exception: The connection was not closed. The connection's current state is connecting.
+ ---> System.InvalidOperationException: The connection was not closed. The connection's current state is connecting.
+   at Microsoft.Data.ProviderBase.DbConnectionClosedConnecting.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 16:57:03.548 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 16:58:20.096 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 16:59:43.362 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 17:03:20.493 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 17:17:47.901 +05:30 [ERR] Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.Exception: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+ ---> System.InvalidCastException: Unable to cast object of type 'Microsoft.Data.ProviderBase.DbConnectionClosedConnecting' to type 'Microsoft.Data.SqlClient.SqlInternalConnectionTds'.
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at PMS.Persistence.DataAccessLayer.DataAccess.EnsureConnectionOpen() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 20
+   at PMS.Persistence.DataAccessLayer.DataAccess.QueryAsync[T](String SpName, DynamicParameters parameters) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\DataAccessLayer\DataAccess.cs:line 263
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.AllCommonRegistersRepository.GetAllRegistersDataAsync(Decimal clientId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\AllCommonRegistersRepository.cs:line 68
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 39
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.AllCommonRegisters.GetAllCommonRegistersByClientId.GetAllCommonRegistersByClientIdQueryHandler.Handle(GetAllCommonRegistersByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\AllCommonRegisters\GetAllCommonRegistersByClientId\GetAllCommonRegistersByClientIdQueryHandler.cs:line 44
+   at PMS.API.Controllers.AllCommonRegistersController.GetRegisters() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\AllCommonRegistersController.cs:line 40
+2024-11-27 17:35:31.220 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method2482(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)

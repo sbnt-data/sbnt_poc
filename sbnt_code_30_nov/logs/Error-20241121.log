@@ -1,0 +1,228 @@
+2024-11-21 10:00:57.832 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ObjectDisposedException: The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 193
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method658(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 16:15:56.024 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ObjectDisposedException: The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.OnBeforeGrid() in /_/Dapper/SqlMapper.GridReader.cs:line 185
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 193
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 96
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method9(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 17:11:51.243 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ObjectDisposedException: The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.OnBeforeGrid() in /_/Dapper/SqlMapper.GridReader.cs:line 185
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 193
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 96
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method565(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 17:40:39.934 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ObjectDisposedException: The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.OnBeforeGrid() in /_/Dapper/SqlMapper.GridReader.cs:line 185
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 193
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 96
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method565(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 18:18:00.992 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PMS.Persistence.Repositories.JobCategoryRepository.GetAllJobCategoriesAsync(Decimal clientId, String hardCode) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobCategoryRepository.cs:line 41
+ ---> System.Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PMS.Persistence.Repositories.JobCategoryRepository.GetAllJobCategoriesAsync(Decimal clientId, String hardCode) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobCategoryRepository.cs:line 41
+   at PMS.Persistence.Repositories.JobCategoryRepository.GetAllJobCategoriesAsync(Decimal clientId, String hardCode) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobCategoryRepository.cs:line 45
+   at PMS.Application.Features.CommonRegisters.Queries.StatusRegister.GetStatusRegisterListQueryHandler.Handle(GetStatusRegisterListQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\StatusRegister\GetStatusRegisterListQueryHandler.cs:line 48
+   --- End of inner exception stack trace ---
+   at PMS.Application.Features.CommonRegisters.Queries.StatusRegister.GetStatusRegisterListQueryHandler.Handle(GetStatusRegisterListQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\StatusRegister\GetStatusRegisterListQueryHandler.cs:line 54
+   at PMS.Api.Controllers.CommonRegistersController.GetStatusRegisterByHardCode(String HardCode) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\CommonRegistersController.cs:line 152
+   at lambda_method573(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 18:35:23.787 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PMS.Persistence.Repositories.StoreTypeRepository.GetStoreTypesByClientIdAsync(Decimal clientId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\StoreTypeRepository.cs:line 37
+   at PMS.Persistence.Repositories.StoreTypeRepository.GetStoreTypesByClientIdAsync(Decimal clientId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\StoreTypeRepository.cs:line 41
+   at PMS.Application.Features.CommonRegisters.Queries.StoreTypeRegister.GetStoreTypeRegisterQueryHandler.Handle(GetStoreTypeRegisterQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\StoreTypeRegister\GetStoreTypeRegisterQueryHandler.cs:line 48
+   at PMS.Api.Controllers.SparePartsController.GetAllStoreTypes() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\SparePartsController.cs:line 47
+   at lambda_method2557(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 18:44:09.515 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ObjectDisposedException: The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 193
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 42
+   at PMS.Persistence.Repositories.VesselGroupAndVesselRepository.GetVesselGroupAndVessel(Decimal clientid, Decimal locationId, Decimal userId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\VesselGroupAndVesselRepository.cs:line 73
+   at PMS.Application.Features.VesselGroupAndVessel.Queries.GetVesselGroupAndVessellistByClientId.GetVesselGroupAndVessellistByClientIdQueryHandler.Handle(GetVesselGroupAndVessellistByClientIdQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\VesselGroupAndVessel\Queries\GetVesselGroupAndVessellistByClientId\GetVesselGroupAndVessellistByClientIdQueryHandler.cs:line 24
+   at PMS.Api.Controllers.VesselController.GetAllVesselByClientId() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\VesselController.cs:line 25
+   at lambda_method565(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 18:47:44.435 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at PMS.Persistence.Repositories.StoreTypeRepository.GetStoreTypesByClientIdAsync(Decimal clientId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\StoreTypeRepository.cs:line 37
+   at PMS.Persistence.Repositories.StoreTypeRepository.GetStoreTypesByClientIdAsync(Decimal clientId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\StoreTypeRepository.cs:line 41
+   at PMS.Application.Features.CommonRegisters.Queries.StoreTypeRegister.GetStoreTypeRegisterQueryHandler.Handle(GetStoreTypeRegisterQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\CommonRegisters\Queries\StoreTypeRegister\GetStoreTypeRegisterQueryHandler.cs:line 48
+   at PMS.Api.Controllers.SparePartsController.GetAllStoreTypes() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\SparePartsController.cs:line 47
+   at lambda_method2557(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-21 18:55:44.259 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: An error occurred while fetching job procedures.
+ ---> System.Exception: Error fetching job procedures: 
+   at PMS.Persistence.Repositories.JobProcedureRepository.GetJobProceduresByClientId(Decimal clientId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobProcedureRepository.cs:line 37
+   --- End of inner exception stack trace ---
+   at PMS.Persistence.Repositories.JobProcedureRepository.GetJobProceduresByClientId(Decimal clientId) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobProcedureRepository.cs:line 44
+   at PMS.Application.Features.JobProcedure.Queries.GetJobProcedureListByClientId.GetJobProcedureListByClientIdQueryHandler.Handle(GetJobProcedureListByClientIdQuery request, CancellationToken cancellationToken) in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\JobProcedure\Queries\GetJobProcedureListByClientId\GetJobProcedureListByClientIdQueryHandler.cs:line 48
+   at PMS.Api.Controllers.JobProcedureController.Get() in e:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\JobProcedureController.cs:line 45
+   at lambda_method6784(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)

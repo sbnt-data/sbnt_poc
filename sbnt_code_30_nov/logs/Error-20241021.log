@@ -1,0 +1,256 @@
+2024-10-21 14:19:11.956 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: The given key 'ConcurId' was not present in the dictionary.
+   at PMS.Application.Features.Equipment.Commands.CreateEquipment.CreateEquipmentCommandHandler.Handle(CreateEquipmentCommand request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\Equipment\Commands\CreateEquipment\CreateEquipmentCommandHandler.cs:line 58
+   at PMS.Api.Controllers.EquipmentController.Create(CreateEquipmentCommand createEquipmentCommand) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\EquipmentController.cs:line 122
+   at lambda_method2101(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-21 17:42:42.751 +05:30 [ERR] Failed executing DbCommand (30,942ms) [Parameters=[@__clientId_0='?' (Precision = 18) (DbType = Decimal), @__schudelerfilterlist_VesselId_1='?' (Precision = 18) (DbType = Decimal), @__schudelerfilterlist_Month_2='?' (DbType = Int32), @__schudelerfilterlist_Year_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[ID] AS [Id], [j1].[ID] AS [JobOrderId], [e].[ID] AS [EqId], [j0].[NEXT_DUE_DATE] AS [NextDueDate], CASE
+    WHEN [j0].[LAST_DONE_DATE] IS NOT NULL THEN [j0].[LAST_DONE_DATE]
+    ELSE NULL
+END AS [LastDoneDate], [j1].[JOB_TITLE] AS [JobTitle], CASE
+    WHEN [e].[INHERIT_RH_EQ_ID] <> -1.0 OR [e].[INHERIT_RH_EQ_ID] IS NULL THEN [e].[INHERIT_RH_EQ_ID]
+    ELSE NULL
+END AS [InheritedEqRh], [e].[EQ_NAME] AS [EqName], [e].[CODE] AS [EqCode], [j].[FREQUENCY] AS [Interval], [f].[FQ_NAME] AS [FrequencyName], [f].[HARD_CODE] AS [FqHardCode], [j].[EST_JOB_DURATION] AS [EstJobDuration]
+FROM [PM].[JOB_PLAN] AS [j]
+INNER JOIN [PM].[JOB_PLAN_DUE] AS [j0] ON [j].[ID] = [j0].[JOB_PLAN_ID]
+INNER JOIN [PM].[JOB_ORDER] AS [j1] ON [j].[ID] = [j1].[JOB_PLAN_ID]
+INNER JOIN [PM].[STATUS_MF] AS [s] ON [j1].[JOB_STATUS_ID] = [s].[ID]
+INNER JOIN [PM].[FREQUENCY_MF] AS [f] ON [j].[FREQUENCY_ID] = [f].[ID]
+INNER JOIN [PM].[EQ_MF] AS [e] ON [j].[EQ_ID] = [e].[ID]
+INNER JOIN [PM].[EQ_SAFETY_JN] AS [e0] ON [e].[ID] = [e0].[EQ_ID]
+INNER JOIN [CM].[DEPARTMENT_MF] AS [d] ON [j].[DEPARTMENT_ID] = [d].[ID]
+INNER JOIN [PM].[JOB_CLASS_MF] AS [j2] ON [j1].[JOB_CLASS_ID] = [j2].[ID]
+INNER JOIN [PM].[JOB_TYPE_MF] AS [j3] ON [j1].[JOB_TYPE_ID] = [j3].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s0] ON [j1].[JOB_STATUS_ID] = [s0].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s1] ON [j1].[PRIORITY_ID] = [s1].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s2] ON [j1].[JOB_ASSIGNEDTO_ID] = [s2].[ID]
+INNER JOIN [CM].[POSITION_MF] AS [p] ON [j].[RESPONSIBLE_POSITION_ID] = [p].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s3] ON [e0].[EQ_SAFETY_STATUS_ID] = [s3].[ID]
+WHERE [j].[CLIENT_ID] = @__clientId_0 AND [j].[VESSEL_ID] = @__schudelerfilterlist_VesselId_1 AND [j0].[NEXT_DUE_DATE] IS NOT NULL AND DATEPART(month, [j0].[NEXT_DUE_DATE]) = @__schudelerfilterlist_Month_2 AND DATEPART(year, [j0].[NEXT_DUE_DATE]) = @__schudelerfilterlist_Year_3 AND [s].[HARD_CODE] = 'NS'
+2024-10-21 17:42:42.882 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:53b7dfe4-7618-46c3-9034-019d5720b67f
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:53b7dfe4-7618-46c3-9034-019d5720b67f
+Error Number:-2,State:0,Class:11
+2024-10-21 17:42:43.496 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.JobPlanRepository.GetSchedulerList(Decimal clientId, GetJobPlanningSchedulerInputModel schudelerfilterlist) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobPlanRepository.cs:line 1113
+   at PMS.Application.Features.JobPlan.Queries.GetJobPlanning.GetJobPlanningQueryHandler.Handle(GetJobPlanningQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\JobPlan\Queries\GetJobPlanning\GetJobPlanningQueryHandler.cs:line 47
+   at PMS.Api.Controllers.JobPlanController.GetJobPlan(GetJobPlanningQuery SchedulerModel) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\JobPlanController.cs:line 208
+   at lambda_method578(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:53b7dfe4-7618-46c3-9034-019d5720b67f
+Error Number:-2,State:0,Class:11
+2024-10-21 17:42:43.925 +05:30 [ERR] An error occurred while fetching equipment details.
+System.InvalidOperationException: Invalid attempt to call NextResult when reader is closed.
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResult()
+   at Dapper.SqlMapper.GridReader.OnAfterGrid(Int32 index) in /_/Dapper/SqlMapper.GridReader.cs:line 450
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+<>m__Finally1() in /_/Dapper/SqlMapper.GridReader.cs:line 404
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+System.IDisposable.Dispose()
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.GridReader.cs:line 406
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 205
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 96
+   at PMS.Persistence.Repositories.EquipmentDetailsRepository.GetByEquipmentIdandClientId(Decimal Id, Decimal clientid) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\EquipmentDetailsRepository.cs:line 30
+   at PMS.Application.Features.Equipments.Queries.GetEquipmentsListByVesselId.GetEquipmentsListByVesselIdQueryHandler.Handle(GetEquipmentsListByVesselIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\Equipment\Queries\GetEquipmentsListByVesselId\GetEquipmentsListByVesselIdQueryHandler.cs:line 27
+   at PMS.Api.Controllers.EquipmentController.GetEquipmentsListByVesselId(Decimal vesselId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\EquipmentController.cs:line 54
+2024-10-21 17:42:44.003 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Invalid attempt to call NextResult when reader is closed.
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResult()
+   at Dapper.SqlMapper.GridReader.OnAfterGrid(Int32 index) in /_/Dapper/SqlMapper.GridReader.cs:line 450
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+<>m__Finally1() in /_/Dapper/SqlMapper.GridReader.cs:line 404
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+System.IDisposable.Dispose()
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.GridReader.cs:line 406
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 205
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 96
+   at PMS.Persistence.Repositories.EquipmentDetailsRepository.GetByEquipmentIdandClientId(Decimal Id, Decimal clientid) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\EquipmentDetailsRepository.cs:line 30
+   at PMS.Application.Features.Equipments.Queries.GetEquipmentsListByVesselId.GetEquipmentsListByVesselIdQueryHandler.Handle(GetEquipmentsListByVesselIdQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\Equipment\Queries\GetEquipmentsListByVesselId\GetEquipmentsListByVesselIdQueryHandler.cs:line 27
+   at PMS.Api.Controllers.EquipmentController.GetEquipmentsListByVesselId(Decimal vesselId) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\EquipmentController.cs:line 54
+   at lambda_method313(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-21 17:42:56.863 +05:30 [ERR] Failed executing DbCommand (30,031ms) [Parameters=[@__clientId_0='?' (Precision = 18) (DbType = Decimal), @__schudelerfilterlist_VesselId_1='?' (Precision = 18) (DbType = Decimal), @__schudelerfilterlist_Month_2='?' (DbType = Int32), @__schudelerfilterlist_Year_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [j].[ID] AS [Id], [j1].[ID] AS [JobOrderId], [e].[ID] AS [EqId], [j0].[NEXT_DUE_DATE] AS [NextDueDate], CASE
+    WHEN [j0].[LAST_DONE_DATE] IS NOT NULL THEN [j0].[LAST_DONE_DATE]
+    ELSE NULL
+END AS [LastDoneDate], [j1].[JOB_TITLE] AS [JobTitle], CASE
+    WHEN [e].[INHERIT_RH_EQ_ID] <> -1.0 OR [e].[INHERIT_RH_EQ_ID] IS NULL THEN [e].[INHERIT_RH_EQ_ID]
+    ELSE NULL
+END AS [InheritedEqRh], [e].[EQ_NAME] AS [EqName], [e].[CODE] AS [EqCode], [j].[FREQUENCY] AS [Interval], [f].[FQ_NAME] AS [FrequencyName], [f].[HARD_CODE] AS [FqHardCode], [j].[EST_JOB_DURATION] AS [EstJobDuration]
+FROM [PM].[JOB_PLAN] AS [j]
+INNER JOIN [PM].[JOB_PLAN_DUE] AS [j0] ON [j].[ID] = [j0].[JOB_PLAN_ID]
+INNER JOIN [PM].[JOB_ORDER] AS [j1] ON [j].[ID] = [j1].[JOB_PLAN_ID]
+INNER JOIN [PM].[STATUS_MF] AS [s] ON [j1].[JOB_STATUS_ID] = [s].[ID]
+INNER JOIN [PM].[FREQUENCY_MF] AS [f] ON [j].[FREQUENCY_ID] = [f].[ID]
+INNER JOIN [PM].[EQ_MF] AS [e] ON [j].[EQ_ID] = [e].[ID]
+INNER JOIN [PM].[EQ_SAFETY_JN] AS [e0] ON [e].[ID] = [e0].[EQ_ID]
+INNER JOIN [CM].[DEPARTMENT_MF] AS [d] ON [j].[DEPARTMENT_ID] = [d].[ID]
+INNER JOIN [PM].[JOB_CLASS_MF] AS [j2] ON [j1].[JOB_CLASS_ID] = [j2].[ID]
+INNER JOIN [PM].[JOB_TYPE_MF] AS [j3] ON [j1].[JOB_TYPE_ID] = [j3].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s0] ON [j1].[JOB_STATUS_ID] = [s0].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s1] ON [j1].[PRIORITY_ID] = [s1].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s2] ON [j1].[JOB_ASSIGNEDTO_ID] = [s2].[ID]
+INNER JOIN [CM].[POSITION_MF] AS [p] ON [j].[RESPONSIBLE_POSITION_ID] = [p].[ID]
+INNER JOIN [PM].[STATUS_MF] AS [s3] ON [e0].[EQ_SAFETY_STATUS_ID] = [s3].[ID]
+WHERE [j].[CLIENT_ID] = @__clientId_0 AND [j].[VESSEL_ID] = @__schudelerfilterlist_VesselId_1 AND [j0].[NEXT_DUE_DATE] IS NOT NULL AND DATEPART(month, [j0].[NEXT_DUE_DATE]) = @__schudelerfilterlist_Month_2 AND DATEPART(year, [j0].[NEXT_DUE_DATE]) = @__schudelerfilterlist_Year_3 AND [s].[HARD_CODE] = 'NS'
+2024-10-21 17:42:56.879 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'PMS.Persistence.ShipmateTechnicalContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:3f413c57-d681-4db9-8be7-d0c9eac2b6a9
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:3f413c57-d681-4db9-8be7-d0c9eac2b6a9
+Error Number:-2,State:0,Class:11
+2024-10-21 17:42:57.131 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at PMS.Persistence.Repositories.JobPlanRepository.GetSchedulerList(Decimal clientId, GetJobPlanningSchedulerInputModel schudelerfilterlist) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Persistence\Repositories\JobPlanRepository.cs:line 1113
+   at PMS.Application.Features.JobPlan.Queries.GetJobPlanning.GetJobPlanningQueryHandler.Handle(GetJobPlanningQuery request, CancellationToken cancellationToken) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.Application\Features\JobPlan\Queries\GetJobPlanning\GetJobPlanningQueryHandler.cs:line 47
+   at PMS.Api.Controllers.JobPlanController.GetJobPlan(GetJobPlanningQuery SchedulerModel) in E:\Dev_TFS\SBNT.SM.TECHNICAL.CORE8\SBNT.SM.TECHNICAL.CORE8\PMS.API\Controllers\JobPlanController.cs:line 208
+   at lambda_method578(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:3f413c57-d681-4db9-8be7-d0c9eac2b6a9
+Error Number:-2,State:0,Class:11

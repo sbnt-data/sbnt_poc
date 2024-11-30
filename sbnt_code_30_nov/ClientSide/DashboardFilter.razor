@@ -1,0 +1,232 @@
+﻿@inject IStringLocalizer<Resources> localizer
+@using PMS.Web.Client.Models.JobPlanningModels ;
+@using PMS.Web.Client.Models.DashboardModels ;
+@using static PMS.Web.Client.Models.JobType;
+@using Microsoft.Extensions.Configuration
+@using System.ComponentModel.DataAnnotations
+@inject IConfiguration Configuration
+@using PMS.Web.Client.Models.Status
+@inject SessionStorageService sessionStorageService
+
+<TelerikWindow Class="rightFix" Height="100vh" Width="500px" Visible="@FilterVisible" Centered="false" Modal="true">
+    <WindowTitle>
+        @localizer["rsFilter"]
+    </WindowTitle>
+    <WindowActions>
+        <WindowAction Name="Close" OnClick="OnClickClose"></WindowAction>
+    </WindowActions>
+    <WindowContent>
+
+        <div class="h-100 d-flex flex-column">
+            <div class="d-flex flex-column flex-fill gap-2">
+ 
+                <VesselAndVesselGroup SelectedVesselList="@DashBaoardFilterData.SelectedVesselList"
+                                      MultiSelectVesselCombo="true"
+                                      Gap="2"
+                                      Flow="col"
+                                      Enable=EnableVessel
+                                      SelectedVesselListChanged="@SelectedVesselChangedHandler" ></VesselAndVesselGroup>
+                <div class="row">
+                    @* Left Half *@
+                    <div class="col col-12 col-md-6">
+                        <div class="row mb-2">
+                            <label class="k-label k-form-label">
+                                @localizer["rsJobDue"]
+                            </label>
+                            <div>
+                                <TelerikCard>
+                                    <CardBody>
+                                        <SBNTRadioGroup TItem="RadioModel" TValue="string"
+                                                        Layout="RadioGroupLayout.Vertical"
+                                                        Data="@JobFor"
+                                                        Value=@DashBaoardFilterData.SelectedJobFor
+                                                        ValueField="@nameof(RadioModel.RadioCode)"
+                                                        TextField="@nameof(RadioModel.RadioText)"
+                                                        ValueChanged="OnRadioGroupChange">
+                                        </SBNTRadioGroup>
+                                    </CardBody>
+                                </TelerikCard>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div>
+                                <TelerikCard Class="mb-3">
+                                    <CardBody Class="d-flex flex-column gap-3">
+                                        <SBNTCheckBox Label="@localizer["rsRiskAssessment"]" ValueChanged="@OnSelectedRiskChanged" Value="@DashBaoardFilterData.RiskAssessments"> </SBNTCheckBox>
+                                        <SBNTCheckBox Label="@localizer["rsClassItem"]" ValueChanged="@OnSelectedClassChanged" Value="@DashBaoardFilterData.ClassData"> </SBNTCheckBox>
+                                    </CardBody>
+                                </TelerikCard>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="StatusMasterDto"
+                                                     Label="@localizer["rsPriority"]"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     TValue="decimal"
+                                                     Data="@PriorityData"
+                                                     TextField="Name"
+                                                     ValueField="Id"
+                                                     Value="@DashBaoardFilterData.SelectedPrioritys"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedPrioritysChanged(values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="StatusMasterDto"
+                                                     TValue="decimal"
+                                                     Data="@SafetyData"
+                                                     ValueField="Id"
+                                                     TextField="Name"
+                                                     Value="@DashBaoardFilterData.SelectedSafetyLevels"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     Label="@localizer["rsSafetyLevel"]"
+                                                     ValueChanged="@((List<decimal> values) => OnSafetyLevelChanged(values) )"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+                    </div>
+
+                    @* Right Half *@
+                    <div class="col col-12 col-md-6">
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="StatusMasterDto"
+                                                     TValue="decimal"
+                                                     Data="@JobCategoryData"
+                                                     ValueField="Id"
+                                                     TextField="Name"
+                                                     Value="@DashBaoardFilterData.SelectedJobCategories"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     Label="@localizer["rsJobCategory"]"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedJobCategoriesChanged(values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="GetJobType"
+                                                     TValue="decimal"
+                                                     Data="@JobTypeData"
+                                                     ValueField="Id"
+                                                     TextField="Name"
+                                                     Value="@DashBaoardFilterData.SelectedJobTypes"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     Label="@localizer["rsJobType"]"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedJobTypesChanged(values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="GetJobClassModel"
+                                                     TValue="decimal"
+                                                     Data="@JobClassData"
+                                                     ValueField="Id"
+                                                     TextField="Name"
+                                                     Value="@DashBaoardFilterData.SelectedJobClassess"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     Label="@localizer["rsJobClass"]"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedJobClassessChanged(values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="SearchTagModel"
+                                                     TValue="decimal"
+                                                     Data="@JobTagData"
+                                                     ValueField="JobTagId"
+                                                     TextField="SearchTag"
+                                                     Value="@DashBaoardFilterData.SelectedTags"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     Label="@localizer["rsTag"]"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedTagsChanged(values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="StatusMasterDto"
+                                                     Label="@localizer["rsJobStatus"]"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     TValue="decimal"
+                                                     Data="@JobStatusData"
+                                                     TextField="Name"
+                                                     ValueField="Id"
+                                                     Value="@DashBaoardFilterData.SelectedJobStatus"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedJobStatusChanged(values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="ResponsiblePositionModelOutput"
+                                                     TValue="decimal"
+                                                     Data="@ResPositionData"
+                                                     ValueField="ResPositionId"
+                                                     TextField="ResPositionName"
+                                                     Value="@DashBaoardFilterData.SelectedPositions"
+                                                     Placeholder="@localizer["rsAll"]"
+                                                     Label="@localizer["rsResponsiblePosition"]"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedPositionsChanged(values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+
+                        <div class="row mb-2">
+                            <SBNTMultiSelectComboBox TItem="Department"
+                                                     TValue="decimal"
+                                                     Data="@DepartmentData"
+                                                     ValueField="Id"
+                                                     TextField="Name"
+                                                     Value="@DashBaoardFilterData.SelectedDepartments"
+                                                     Placeholder="@localizer["rsSelect"]"
+                                                     Label="@localizer["rsDepartment"]"
+                                                     ValueChanged="@((List<decimal> values) => OnSelectedDepartmentsChanged (values))"
+                                                     TagMode="MultiSelectTagMode.Multiple"
+                                                     MaxAllowedTags="5">
+                            </SBNTMultiSelectComboBox>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="k-label mb-0 k-form-label">@localizer["rsRequisitionDateBetween"] </label>
+                    <TelerikDateRangePicker @bind-StartValue="@FromDate"
+                                            @bind-EndValue="@ToDate"
+                                            Format="@DateFormat"
+                                            Orientation="CalendarOrientation.Vertical"
+                                            Size="@ThemeConstants.DateRangePicker.Size.Small"
+                                            ShowWeekNumbers="true"
+                                            Placeholder="@localizer["rsSelect"]">
+                    </TelerikDateRangePicker>
+                </div>
+            </div>
+
+            <div class="my-1 py-3 d-flex justify-content-end gap-2">
+                <SBNTButton ButtonClick="OnClear" Theme="Theme.Base"><Child>@localizer["rsClear"]</Child></SBNTButton>
+                <SBNTButton ButtonClick="ShowDashBoardData" Theme="Theme.Primary"><Child>@localizer["rsShow"]</Child></SBNTButton>
+            </div>
+        </div>
+    </WindowContent>
+</TelerikWindow>
+<SBNTLoader Visible="LoaderVisible"></SBNTLoader>
+
+<style>
+    .k-floating-label-container{
+        width:50%
+    } 
+    .k-floating-label-container .k-dateinput{
+        width:97%
+    }
+</style>
