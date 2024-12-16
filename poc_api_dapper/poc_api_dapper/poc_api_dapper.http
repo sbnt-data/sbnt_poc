@@ -1,0 +1,6 @@
+@poc_api_dapper_HostAddress = http://localhost:5176
+
+GET {{poc_api_dapper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
