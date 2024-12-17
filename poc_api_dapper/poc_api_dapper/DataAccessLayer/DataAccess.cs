@@ -19,29 +19,74 @@ namespace poc_api_dapper.DataAccessLayer
             _logger = logger;
         }
 
-        public async Task<ReturnDapper<T>> QueryAsync<T>(string spName, DynamicParameters parameters)
+        public async Task<(List<T>, string ReturnStatus, string ErrorCode)> QueryAsync<T>(string spName, DynamicParameters parameters)
         {
             using var connection = _context.CreateConnection();
 
-            var result = new ReturnDapper<T>();
             try
             {
+                // Add standard output parameters
                 AddStandardOutputParameters(parameters);
 
                 _logger.LogInformation("Executing stored procedure {StoredProcedure}", spName);
 
                 // Execute the stored procedure and fetch data
-                result.ListResult = (await connection.QueryAsync<T>(
+                var resultList = (await connection.QueryAsync<T>(
                     spName,
                     parameters,
                     commandType: CommandType.StoredProcedure)).ToList();
 
                 // Extract output parameters
-                result.ReturnStatus = parameters.Get<string>(StoredProcedureParameters.ReturnStatus);
-                result.ErrorCode = parameters.Get<string>(StoredProcedureParameters.ErrorCode);
+                var returnStatus = parameters.Get<string>(StoredProcedureParameters.ReturnStatus);
+                var errorCode = parameters.Get<string>(StoredProcedureParameters.ErrorCode);
 
                 _logger.LogInformation("Stored procedure {StoredProcedure} executed successfully. ReturnStatus: {ReturnStatus}, ErrorCode: {ErrorCode}",
-                    spName, result.ReturnStatus, result.ErrorCode);
+                    spName, returnStatus, errorCode);
+
+                // Return the result list and output parameters
+                return (resultList, returnStatus, errorCode);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error executing stored procedure {StoredProcedure}", spName);
+                var parameterDetails = string.Join(", ", parameters.ParameterNames.Select(name => $"{name}={parameters.Get<object>(name)}"));
+                throw new InvalidOperationException($"Error executing stored procedure '{spName}'. Parameters: {parameterDetails}", ex);
+            }
+        }
+
+        public async Task<(List<T1>, List<T2>, string ReturnStatus, string ErrorCode)> QueryMultipleAsync<T1, T2>(
+    string spName, DynamicParameters parameters)
+        {
+            using var connection = _context.CreateConnection();
+
+            List<T1> resultSet1;
+            List<T2> resultSet2;
+            string returnStatus = string.Empty;
+            string errorCode = string.Empty;
+
+            try
+            {
+                // Add standard output parameters
+                AddStandardOutputParameters(parameters);
+
+                _logger.LogInformation("Executing stored procedure {StoredProcedure}", spName);
+
+                // Execute the stored procedure and fetch multiple result sets
+                using var gridReader = await connection.QueryMultipleAsync(
+                    spName,
+                    parameters,
+                    commandType: CommandType.StoredProcedure);
+
+                // Read the first and second result sets
+                resultSet1 = (await gridReader.ReadAsync<T1>()).ToList();
+                resultSet2 = (await gridReader.ReadAsync<T2>()).ToList();
+
+                // Extract output parameters
+                returnStatus = parameters.Get<string>(StoredProcedureParameters.ReturnStatus);
+                errorCode = parameters.Get<string>(StoredProcedureParameters.ErrorCode);
+
+                _logger.LogInformation("Stored procedure {StoredProcedure} executed successfully. ReturnStatus: {ReturnStatus}, ErrorCode: {ErrorCode}",
+                    spName, returnStatus, errorCode);
             }
             catch (Exception ex)
             {
@@ -50,25 +95,15 @@ namespace poc_api_dapper.DataAccessLayer
                 throw new InvalidOperationException($"Error executing stored procedure '{spName}'. Parameters: {parameterDetails}", ex);
             }
 
-            return result;
+            return (resultSet1, resultSet2, returnStatus, errorCode);
         }
 
-        private void AddStandardOutputParameters(DynamicParameters parameters)
+
+        private static void AddStandardOutputParameters(DynamicParameters parameters)
         {
             parameters.Add(StoredProcedureParameters.ReturnStatus, dbType: DbType.String, size: 50, direction: ParameterDirection.Output);
             parameters.Add(StoredProcedureParameters.ErrorCode, dbType: DbType.String, size: 10, direction: ParameterDirection.Output);
         }
-    }
-
-    public class ReturnDapper<T>
-    {
-        public IEnumerable<T> ListResult { get; set; } = new List<T>();
-        public string ReturnStatus { get; set; }
-        public string ErrorCode { get; set; }
-
-        public bool IsSuccess => ErrorCode == "ERR200";
-
-        public override string ToString() => $"Status: {ReturnStatus}, ErrorCode: {ErrorCode}";
     }
 
     public static class StoredProcedureParameters

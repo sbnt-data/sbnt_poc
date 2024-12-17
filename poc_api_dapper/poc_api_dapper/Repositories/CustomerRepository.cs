@@ -17,7 +17,7 @@ namespace poc_api_dapper.Repositories
             _logger = logger;
         }
 
-        public async Task<ReturnDapper<CustomerModelOutput>> GetCustomerDetails(string customerId)
+        public async Task<List<CustomerModelOutput>> GetCustomerDetails(string customerId)
         {
             _logger.LogInformation("Fetching customer details for CustomerID: {CustomerID}", customerId);
 
@@ -28,12 +28,21 @@ namespace poc_api_dapper.Repositories
                 var parameters = new DynamicParameters();
                 parameters.Add("@CustomerID", customerId, DbType.String, ParameterDirection.Input);
 
-                var result = await _dataAccess.QueryAsync<CustomerModelOutput>(spName, parameters);
+                // Call the updated QueryAsync method
+                var (resultList, returnStatus, errorCode) = await _dataAccess.QueryAsync<CustomerModelOutput>(spName, parameters);
 
                 _logger.LogInformation("Stored procedure executed successfully. ReturnStatus: {ReturnStatus}, ErrorCode: {ErrorCode}",
-                    result.ReturnStatus, result.ErrorCode);
+                    returnStatus, errorCode);
 
-                return result;
+                // Handle error scenarios based on the output parameters
+                if (errorCode != "ERR200")
+                {
+                    _logger.LogError("Stored procedure failed. ReturnStatus: {ReturnStatus}, ErrorCode: {ErrorCode}", returnStatus, errorCode);
+                    throw new Exception($"Stored procedure failed: {returnStatus} (Code: {errorCode})");
+                }
+
+                // Return the result list
+                return resultList;
             }
             catch (Exception ex)
             {
@@ -41,6 +50,41 @@ namespace poc_api_dapper.Repositories
                 throw;
             }
         }
+
+        public async Task<List<JobOrderCbmModelOutput>> GetJobOrderCbmByJobOrderId(decimal jobOrderId, decimal clientId)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@JobOrderId", jobOrderId);
+            parameters.Add("@ClientId", clientId);
+
+            // Call QueryMultipleAsync
+            var (joCbmList, jo2TList, returnStatus, errorCode) =
+                await _dataAccess.QueryMultipleAsync<JobOrderCbmModelOutput, JobOrderCbmJob2triggerModel>(
+                    "PM.usp_JobOrderCbmWithJobOrderIdPopulate", parameters);
+
+            // Handle potential return status or errors
+            if (errorCode != "ERR200")
+            {
+                _logger.LogError("Stored procedure failed with ErrorCode: {ErrorCode}, ReturnStatus: {ReturnStatus}", errorCode, returnStatus);
+                throw new Exception($"Stored procedure failed: {returnStatus} (Code: {errorCode})");
+            }
+
+            // Map result sets
+            if (joCbmList.Any() && jo2TList.Any())
+            {
+                var jo2TLookup = jo2TList.GroupBy(j => j.JobPlanCbmId).ToDictionary(g => g.Key, g => g.ToList());
+
+                foreach (var cbm in joCbmList)
+                {
+                    cbm.JobOrderCbmJob2trigger = jo2TLookup.TryGetValue(cbm.JobPlanCbmId, out var triggers)
+                        ? triggers
+                        : new List<JobOrderCbmJob2triggerModel>();
+                }
+            }
+
+            return joCbmList;
+        }
+
     }
 
     public static class StoredProcedures

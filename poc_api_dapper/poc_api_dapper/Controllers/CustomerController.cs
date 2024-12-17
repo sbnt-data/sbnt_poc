@@ -34,19 +34,21 @@ namespace poc_api_dapper.Controllers
 
             try
             {
-                var result = await _customerRepository.GetCustomerDetails(customerId);
+                // Fetch customer details
+                var customerDetails = await _customerRepository.GetCustomerDetails(customerId);
 
-                if (result == null || result.ListResult == null || !result.ListResult.Any())
+                if (customerDetails == null || !customerDetails.Any())
                 {
                     _logger.LogInformation("Customer not found for ID: {CustomerId}", customerId);
                     return NotFound(new { status = "error", message = $"Customer with ID '{customerId}' not found." });
                 }
 
+                // Return success response
                 return Ok(new
                 {
                     status = "success",
                     message = "Customer details retrieved successfully.",
-                    data = result.ListResult
+                    data = customerDetails
                 });
             }
             catch (Exception ex)
