@@ -2,8 +2,9 @@
 {
     public class CustomerModelOutput
     {
-        public string CompanyName { get; set; }
-        public string ContactName { get; set; }
-        public string Country { get; set; }
+        public string CustomerID { get; set; }      // Primary key
+        public string CompanyName { get; set; }     // Company Name
+        public string ContactName { get; set; }     // Contact Name
+        public string Country { get; set; }         // Country of the customer
     }
 }

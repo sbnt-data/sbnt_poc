@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using poc_api_dapper.Models;
 using poc_api_dapper.Repositories;
 
 namespace poc_api_dapper.Controllers
@@ -18,13 +17,68 @@ namespace poc_api_dapper.Controllers
             _logger = logger;
         }
 
-        /// <summary>
-        /// Retrieves customer details for the given customer ID.
-        /// </summary>
-        /// <param name="customerId">The unique identifier for the customer.</param>
-        /// <returns>Returns customer details if found; otherwise, returns an appropriate error response.</returns>
         [HttpGet("{customerId}")]
         public async Task<IActionResult> GetCustomerDetails(string customerId)
+        {
+            try
+            {
+                var customers = await _customerRepository.GetCustomerDetailsAsync(customerId);
+                return Ok(customers);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching customer details.");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpPut("{customerId}/name")]
+        public async Task<IActionResult> UpdateCustomerName(string customerId, [FromBody] string newName)
+        {
+            try
+            {
+                var rowsAffected = await _customerRepository.UpdateCustomerNameAsync(customerId, newName);
+                return Ok(new { message = "Customer updated successfully.", rowsAffected });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating customer name.");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpGet("count/{country}")]
+        public async Task<IActionResult> GetCustomerCount(string country)
+        {
+            try
+            {
+                var count = await _customerRepository.GetCustomerCountByCountryAsync(country);
+                return Ok(new { country, count });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching customer count.");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpGet("{customerId}/with-orders")]
+        public async Task<IActionResult> GetCustomerWithOrders(string customerId)
+        {
+            try
+            {
+                var (customers, orders) = await _customerRepository.GetCustomerWithOrdersAsync(customerId);
+                return Ok(new { customers, orders });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching customer with orders.");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [HttpGet("{customerId}/orders-and-employees")]
+        public async Task<IActionResult> GetCustomerOrdersAndEmployees(string customerId)
         {
             if (string.IsNullOrWhiteSpace(customerId))
             {
@@ -34,28 +88,26 @@ namespace poc_api_dapper.Controllers
 
             try
             {
-                // Fetch customer details
-                var customerDetails = await _customerRepository.GetCustomerDetails(customerId);
+                var (customers, orders, employees) = await _customerRepository.GetCustomerOrdersAndEmployeesAsync(customerId);
 
-                if (customerDetails == null || !customerDetails.Any())
-                {
-                    _logger.LogInformation("Customer not found for ID: {CustomerId}", customerId);
-                    return NotFound(new { status = "error", message = $"Customer with ID '{customerId}' not found." });
-                }
-
-                // Return success response
                 return Ok(new
                 {
                     status = "success",
-                    message = "Customer details retrieved successfully.",
-                    data = customerDetails
+                    message = "Customer, orders, and employees retrieved successfully.",
+                    data = new
+                    {
+                        Customers = customers,
+                        Orders = orders,
+                        Employees = employees
+                    }
                 });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while retrieving customer details for ID: {CustomerId}", customerId);
+                _logger.LogError(ex, "An error occurred while retrieving customer, orders, and employees for ID: {CustomerId}", customerId);
                 return StatusCode(500, new { status = "error", message = "An unexpected error occurred. Please try again later." });
             }
         }
+
     }
 }

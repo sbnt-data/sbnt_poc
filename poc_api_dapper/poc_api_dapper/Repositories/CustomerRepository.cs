@@ -17,78 +17,128 @@ namespace poc_api_dapper.Repositories
             _logger = logger;
         }
 
-        public async Task<List<CustomerModelOutput>> GetCustomerDetails(string customerId)
+        /// <summary>
+        /// Retrieves customer details by ID.
+        /// </summary>
+        public async Task<List<CustomerModelOutput>> GetCustomerDetailsAsync(string customerId)
         {
-            _logger.LogInformation("Fetching customer details for CustomerID: {CustomerID}", customerId);
+            var parameters = new DynamicParameters();
+            parameters.Add("@CustomerID", customerId, DbType.String);
 
-            try
-            {
-                string spName = StoredProcedures.GetCustomerDetails;
+            var result = await _dataAccess.QueryAsync<CustomerModelOutput>(
+                StoredProcedures.GetCustomerDetails, parameters);
 
-                var parameters = new DynamicParameters();
-                parameters.Add("@CustomerID", customerId, DbType.String, ParameterDirection.Input);
+            if (!result.IsSuccess)
+                throw new DataException($"Failed to fetch customer details: {result.ReturnStatus}");
 
-                // Call the updated QueryAsync method
-                var (resultList, returnStatus, errorCode) = await _dataAccess.QueryAsync<CustomerModelOutput>(spName, parameters);
-
-                _logger.LogInformation("Stored procedure executed successfully. ReturnStatus: {ReturnStatus}, ErrorCode: {ErrorCode}",
-                    returnStatus, errorCode);
-
-                // Handle error scenarios based on the output parameters
-                if (errorCode != "ERR200")
-                {
-                    _logger.LogError("Stored procedure failed. ReturnStatus: {ReturnStatus}, ErrorCode: {ErrorCode}", returnStatus, errorCode);
-                    throw new Exception($"Stored procedure failed: {returnStatus} (Code: {errorCode})");
-                }
-
-                // Return the result list
-                return resultList;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error fetching customer details for CustomerID: {CustomerID}", customerId);
-                throw;
-            }
+            return result.ResultSet;
         }
 
-        public async Task<List<JobOrderCbmModelOutput>> GetJobOrderCbmByJobOrderId(decimal jobOrderId, decimal clientId)
+        /// <summary>
+        /// Updates a customer’s name.
+        /// </summary>
+        public async Task<int> UpdateCustomerNameAsync(string customerId, string newName)
         {
-            DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("@JobOrderId", jobOrderId);
-            parameters.Add("@ClientId", clientId);
+            var parameters = new DynamicParameters();
+            parameters.Add("@CustomerID", customerId, DbType.String);
+            parameters.Add("@NewName", newName, DbType.String);
 
-            // Call QueryMultipleAsync
-            var (joCbmList, jo2TList, returnStatus, errorCode) =
-                await _dataAccess.QueryMultipleAsync<JobOrderCbmModelOutput, JobOrderCbmJob2triggerModel>(
-                    "PM.usp_JobOrderCbmWithJobOrderIdPopulate", parameters);
+            var result = await _dataAccess.ExecuteAsync(StoredProcedures.UpdateCustomerName, parameters);
 
-            // Handle potential return status or errors
-            if (errorCode != "ERR200")
-            {
-                _logger.LogError("Stored procedure failed with ErrorCode: {ErrorCode}, ReturnStatus: {ReturnStatus}", errorCode, returnStatus);
-                throw new Exception($"Stored procedure failed: {returnStatus} (Code: {errorCode})");
-            }
+            if (!result.IsSuccess)
+                throw new DataException($"Failed to update customer: {result.ReturnStatus}");
 
-            // Map result sets
-            if (joCbmList.Any() && jo2TList.Any())
-            {
-                var jo2TLookup = jo2TList.GroupBy(j => j.JobPlanCbmId).ToDictionary(g => g.Key, g => g.ToList());
-
-                foreach (var cbm in joCbmList)
-                {
-                    cbm.JobOrderCbmJob2trigger = jo2TLookup.TryGetValue(cbm.JobPlanCbmId, out var triggers)
-                        ? triggers
-                        : new List<JobOrderCbmJob2triggerModel>();
-                }
-            }
-
-            return joCbmList;
+            return result.ResultSet.FirstOrDefault(); // Rows affected
         }
 
+        /// <summary>
+        /// Retrieves customer count for a given country.
+        /// </summary>
+        public async Task<int> GetCustomerCountByCountryAsync(string country)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@Country", country, DbType.String);
+
+            var result = await _dataAccess.ExecuteScalarAsync<int>(
+                StoredProcedures.GetCustomerCountByCountry, parameters);
+
+            if (!result.IsSuccess)
+                throw new DataException($"Failed to get customer count: {result.ReturnStatus}");
+
+            return result.ResultSet.FirstOrDefault(); // Scalar result
+        }
+
+        /// <summary>
+        /// Fetches multiple result sets (customers and their orders).
+        /// </summary>
+        public async Task<(List<CustomerModelOutput>, List<OrderModel>)> GetCustomerWithOrdersAsync(string customerId)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@CustomerID", customerId, DbType.String);
+
+            var result = await _dataAccess.QueryMultipleAsync(StoredProcedures.GetCustomerWithOrders, parameters);
+
+            if (!result.IsSuccess)
+                throw new DataException($"Failed to fetch data: {result.ReturnStatus}");
+
+            var customers = MapToModel<CustomerModelOutput>(result.CombinedResultSets[0]);
+            var orders = MapToModel<OrderModel>(result.CombinedResultSets[1]);
+
+            return (customers, orders);
+        }
+
+        /// <summary>
+        /// Fetches multiple result sets (customers and their orders and employees).
+        /// </summary>
+        public async Task<(List<CustomerModelOutput>, List<OrderModel>, List<EmployeeModel>)> GetCustomerOrdersAndEmployeesAsync(string customerId)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@CustomerID", customerId, DbType.String);
+
+            var result = await _dataAccess.QueryMultipleAsync(StoredProcedures.GetCustomerOrdersAndEmployees, parameters);
+
+            if (!result.IsSuccess)
+                throw new DataException($"Failed to fetch data: {result.ReturnStatus}");
+
+            // Read 3 result sets using CombinedResultSets
+            var customers = MapToModel<CustomerModelOutput>(result.CombinedResultSets[0]);
+            var orders = MapToModel<OrderModel>(result.CombinedResultSets[1]);
+            var employees = MapToModel<EmployeeModel>(result.CombinedResultSets[2]);
+
+            return (customers, orders, employees);
+        }
+
+        private static List<T> MapToModel<T>(IEnumerable<dynamic> resultSet)
+        {
+            return resultSet.Select(row =>
+            {
+                var model = Activator.CreateInstance<T>();
+                var properties = typeof(T).GetProperties();
+                var rowDictionary = (IDictionary<string, object>)row;
+
+                properties
+                    .Where(property => rowDictionary.ContainsKey(property.Name))
+                    .ToList()
+                    .ForEach(property =>
+                    {
+                        var value = rowDictionary[property.Name];
+                        var targetType = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
+
+                        // Set value considering nullable and non-nullable types
+                        property.SetValue(model, value == null ? null : Convert.ChangeType(value, targetType));
+                    });
+
+                return model;
+            }).ToList();
+        }
     }
 
     public static class StoredProcedures
     {
         public const string GetCustomerDetails = "[dbo].GetCustomerDetails";
+        public const string UpdateCustomerName = "[dbo].UpdateCustomerName";
+        public const string GetCustomerCountByCountry = "[dbo].GetCustomerCountByCountry";
+        public const string GetCustomerWithOrders = "[dbo].GetCustomerWithOrders";
+        public const string GetCustomerOrdersAndEmployees = "[dbo].[GetCustomerOrdersAndEmployees]";
     }
 }
